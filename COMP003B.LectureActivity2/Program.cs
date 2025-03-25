@@ -29,6 +29,8 @@ namespace COMP003B.LectureActivity2
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
+            app.UseWelcomePage("/welcome");
+
             app.UseRouting();
 
             app.UseAuthorization();
