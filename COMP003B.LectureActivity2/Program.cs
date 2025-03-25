@@ -5,6 +5,9 @@
  * Purpose: Working on Middleware in ASP.NET Core
  *
  */
+
+using COMP003B.LectureActivity2.Middleware;
+
 namespace COMP003B.LectureActivity2
 {
     public class Program
@@ -28,7 +31,9 @@ namespace COMP003B.LectureActivity2
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-
+            // custom middleware
+            app.UseMiddleware<RequestLoggingMiddleware>();
+            // built-in middleware
             app.UseWelcomePage("/welcome");
 
             app.UseRouting();
